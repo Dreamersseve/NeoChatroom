@@ -1,24 +1,54 @@
+简体中文 | [English](./README_EN.md)
 
-# 🌐 seve'chatroom
-C++高性能网络聊天室
+> [!IMPORTANT]
+>
+> ### 严肃警告
+>
+> - 请务必遵守 [GNU Affero General Public License (AGPL-3.0)](https://www.gnu.org/licenses/agpl-3.0.html) 许可协议
+> - 在您的修改、演绎、分发或派生项目中，必须同样采用 **AGPL-3.0** 许可协议，**并在适当的位置包含本项目的许可和版权信息**
+> - **禁止用于售卖或其他盈利用途**，如若发现，作者保留追究法律责任的权利
+> - 禁止在二开项目中修改程序原版权信息（ 您可以添加二开作者信息 ）
+> - 感谢您的尊重与理解
+   
+<p>
+<strong><h2>🌐Seve'chatroom</h2></strong>
+基于 C++ 高性能网络聊天室 | 一个高性能、轻量级、原生实现的局域网聊天室解决方案，专为教学机房及内网环境设计。
+</p>
 
-VS2022编写的sln版截至到v0.1.2，请使用cmake构建。
+[![License](https://img.shields.io/github/license/Dreamersseve/NeoChatroom?style=flat-square)](https://github.com/Dreamersseve/NeoChatroom/blob/main/LICENSE)
+[![Stars](https://img.shields.io/github/stars/Dreamersseve/NeoChatroom?style=flat-square)](https://github.com/Dreamersseve/NeoChatroom/stargazers)
+[![Last Commit](https://img.shields.io/github/last-commit/Dreamersseve/NeoChatroom?style=flat-square)](https://github.com/Dreamersseve/NeoChatroom/commits/main)
+[![Platform](https://img.shields.io/badge/platform-Windows-blue?style=flat-square)](#)
 
-## how to build?
+### 👀 Demo
 
-windows用户可以直接下载Release
+![](https://cdn.luogu.com.cn/upload/image_hosting/b65eyz4w.png)
+![](https://cdn.luogu.com.cn/upload/image_hosting/6qt8dkg7.png)
+![](https://cdn.luogu.com.cn/upload/image_hosting/pc5t3u9r.png)
+![](https://cdn.luogu.com.cn/upload/image_hosting/7s4jjvk1.png)
+![](https://cdn.luogu.com.cn/upload/image_hosting/xqs01vxa.png)
 
----
+[🌐Seve'chatroom](https://chatroom.seveoi.icu)
 
-#### 📦 项目依赖
+### 🎉 特点 
 
-* CMake ≥ 3.14
-* C++17 编译器（如 g++, clang++, MSVC）
-* OpenSSL 开发库
-* SQLite3 开发库
-* Git（可选）
+- [x] 支持多个聊天室并发运行。
+- [x] 聊天室可设置**锁定/隐藏/密码保护**。
+- [x] 消息支持 **Markdown** 与 **LaTeX** 渲染。
+- [x] 支持图片发送与多行消息显示。
+- [x] 后端提供管理界面，可进行房间控制与数据查看。
 
----
+- 🚀 **极致轻量**：后端内存占用 < 7MB，前端带宽需求低于 10kbps。
+- ⚡ **高性能**：i5-12400 实测下，1000 并发用户仅消耗 <3% CPU。
+- 🖱️ **一键部署**：可在任何一台 Windows 电脑中直接运行，无需配置环境。
+- 🔒 **基础安全性**：支持 HTTPS、基础注入防护、密码验证。
+- 🌍 **局域网适配**：为机房/内网通信量身打造，避免使用公网聊天室带来的隐私风险。
+  
+### ⚙️ 快速部署
+
+前往 [Github Releases](https://github.com/Dreamersseve/NeoChatroom/releases) 下载最新版二进制文件运行。
+
+### 📦 程序部署
 
 #### 🐧 Linux 下构建指南
 
@@ -112,54 +142,18 @@ git clone https://github.com/microsoft/vcpkg.git
 * `database.db` 存在或可自动生成
 * `html/` 静态文件目录正确
 
----
+### 🛫️ 技术栈 | 程序框架
 
-#### 📎 附加说明
+* CMake
+* C++17 编译器
+* OpenSSL 
+* SQLite3 
+* Git
 
-* 编译输出的 SSL 证书 (`server.crt`, `server.key`) 可用于 HTTPS 支持
-* 如果你遇到找不到依赖库，使用 `cmake-gui` 或确保系统库路径配置正确
+- **后端**：`C++` + `sqlite` + `cpp-httplib`，多线程设计，支持高并发。
+- **前端**：纯原生 JavaScript + HTML + CSS，无依赖、极简部署。
 
+## Star History | Contributors
 
-
-
-[![License](https://img.shields.io/github/license/Dreamersseve/NeoChatroom?style=flat-square)](https://github.com/Dreamersseve/NeoChatroom/blob/main/LICENSE)
-[![Stars](https://img.shields.io/github/stars/Dreamersseve/NeoChatroom?style=flat-square)](https://github.com/Dreamersseve/NeoChatroom/stargazers)
-[![Last Commit](https://img.shields.io/github/last-commit/Dreamersseve/NeoChatroom?style=flat-square)](https://github.com/Dreamersseve/NeoChatroom/commits/main)
-[![Platform](https://img.shields.io/badge/platform-Windows-blue?style=flat-square)](#)
-
-> 一个高性能、轻量级、原生实现的局域网聊天室解决方案，专为教学机房及内网环境设计。
-
----
-
-## ✨ 功能简介
-
-![](https://cdn.luogu.com.cn/upload/image_hosting/b65eyz4w.png)
-![](https://cdn.luogu.com.cn/upload/image_hosting/6qt8dkg7.png)
-![](https://cdn.luogu.com.cn/upload/image_hosting/pc5t3u9r.png)
-![](https://cdn.luogu.com.cn/upload/image_hosting/7s4jjvk1.png)
-![](https://cdn.luogu.com.cn/upload/image_hosting/xqs01vxa.png)
-
-- 支持多个聊天室并发运行
-- 聊天室可设置**锁定/隐藏/密码保护**
-- 消息支持 **Markdown** 与 **LaTeX** 渲染
-- 支持图片发送与多行消息显示
-- 后端提供管理界面，可进行房间控制与数据查看
-
----
-
-##  技术架构
-
-- **后端**：`C++` + `sqlite` + `cpp-httplib`，多线程设计，支持高并发
-- **前端**：纯原生 JavaScript + HTML + CSS，无依赖、极简部署
-
----
-
-##  特点
-
-- 🚀 **极致轻量**：后端内存占用 < 7MB，前端带宽需求低于 10kbps
-- ⚡ **高性能**：i5-12400 实测下，1000 并发用户仅消耗 <3% CPU
-- 🖱️ **一键部署**：可在任何一台 Windows 电脑中直接运行，无需配置环境
-- 🔒 **基础安全性**：支持 HTTPS、基础注入防护、密码验证
-- 🌍 **局域网适配**：为机房/内网通信量身打造，避免使用公网聊天室带来的隐私风险
-
-
+[![Star History Chart](https://api.star-history.com/svg?repos=Dreamersseve/NeoChatroom&type=Date)](https://star-history.com/#Dreamersseve/NeoChatroom&Date)
+[![](https://contrib.rocks/image?repo=Dreamersseve/NeoChatroom)](https://github.com/Dreamersseve/NeoChatroom/graphs/contributors)
