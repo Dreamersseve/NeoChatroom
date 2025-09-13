@@ -90,6 +90,8 @@ make -j$(nproc)
 **注意，请将html和config.json放在同目录下，程序不会自动生成**
 ```bash
 ./NeoChatroom
+start
+load
 ```
 
 ---
