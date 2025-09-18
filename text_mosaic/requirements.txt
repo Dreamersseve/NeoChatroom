@@ -1,0 +1,33 @@
+# Text Mosaic Generator Requirements
+
+# Web Framework
+Flask==3.0.0
+Werkzeug==3.0.1
+
+# Image Processing
+Pillow==10.1.0
+opencv-python==4.8.1.78
+numpy==1.24.4
+
+# Async Processing
+celery==5.3.4
+redis==5.0.1
+
+# Database
+sqlite3  # Built into Python
+
+# System and utilities
+pathlib  # Built into Python
+hashlib  # Built into Python
+concurrent.futures  # Built into Python
+multiprocessing  # Built into Python
+threading  # Built into Python
+queue  # Built into Python
+dataclasses  # Built into Python
+logging  # Built into Python
+uuid  # Built into Python
+json  # Built into Python
+os  # Built into Python
+sys  # Built into Python
+time  # Built into Python
+datetime  # Built into Python
