@@ -1,14 +1,4 @@
 简体中文 | [English](./README_EN.md)
-
-> [!IMPORTANT]
->
-> ### 严肃警告
->
-> - 请务必遵守 [GNU Affero General Public License (AGPL-3.0)](https://www.gnu.org/licenses/agpl-3.0.html) 许可协议
-> - 在您的修改、演绎、分发或派生项目中，必须同样采用 **AGPL-3.0** 许可协议，**并在适当的位置包含本项目的许可和版权信息**
-> - **禁止用于售卖或其他盈利用途**，如若发现，作者保留追究法律责任的权利
-> - 禁止在二开项目中修改程序原版权信息（ 您可以添加二开作者信息 ）
-> - 感谢您的尊重与理解
    
 <p>
 <strong><h2>🌐Seve'chatroom</h2></strong>
