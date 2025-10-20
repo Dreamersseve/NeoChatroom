@@ -361,3 +361,27 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# CMake build directory
+NeoChatroomCmake/build/
+NeoChatroomCmake/cmake-build-*/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+.pytest_cache/
+
+# Text Mosaic Application
+text_mosaic/uploads/
+text_mosaic/results/
+text_mosaic/thumbnails/
+text_mosaic/cache/
+text_mosaic/*.db

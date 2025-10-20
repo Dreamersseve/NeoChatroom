@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Mosaic Generator</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-image"></i> Text Mosaic Generator</h1>
+            <p>Create beautiful text art using your images</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Upload Section -->
+            <section class="upload-section">
+                <h2><i class="fas fa-upload"></i> Upload Images</h2>
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-content">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Drag and drop images here or <button class="upload-btn" id="uploadBtn">browse files</button></p>
+                        <p class="upload-info">Supported formats: JPG, PNG, WEBP (max 16MB per file)</p>
+                    </div>
+                    <input type="file" id="fileInput" multiple accept=".jpg,.jpeg,.png,.webp" style="display: none;">
+                </div>
+                
+                <div class="upload-progress" id="uploadProgress" style="display: none;">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <p id="progressText">Uploading...</p>
+                </div>
+            </section>
+
+            <!-- Image Gallery -->
+            <section class="gallery-section">
+                <h2><i class="fas fa-images"></i> Image Gallery <span id="imageCount">(0 images)</span></h2>
+                <div class="gallery-grid" id="galleryGrid">
+                    <div class="gallery-empty">
+                        <i class="fas fa-image"></i>
+                        <p>No images uploaded yet</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Configuration Panel -->
+            <section class="config-section">
+                <h2><i class="fas fa-cog"></i> Mosaic Configuration</h2>
+                <form id="configForm" class="config-form">
+                    <div class="form-group">
+                        <label for="textInput">Text to Create:</label>
+                        <input type="text" id="textInput" name="text" placeholder="Enter your text" maxlength="50" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fontSize">Font Size:</label>
+                            <input type="range" id="fontSize" name="font_size" min="50" max="500" value="200">
+                            <span id="fontSizeValue">200</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="circleSize">Image Size:</label>
+                            <input type="range" id="circleSize" name="circle_size" min="10" max="100" value="30">
+                            <span id="circleSizeValue">30</span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="canvasWidth">Canvas Width:</label>
+                            <input type="number" id="canvasWidth" name="canvas_width" min="400" max="3000" value="1200">
+                        </div>
+                        <div class="form-group">
+                            <label for="canvasHeight">Canvas Height:</label>
+                            <input type="number" id="canvasHeight" name="canvas_height" min="200" max="3000" value="400">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="overlapFactor">Image Overlap:</label>
+                        <input type="range" id="overlapFactor" name="overlap_factor" min="0.1" max="1.0" step="0.1" value="0.8">
+                        <span id="overlapFactorValue">0.8</span>
+                    </div>
+
+                    <button type="submit" class="generate-btn" id="generateBtn">
+                        <i class="fas fa-magic"></i> Generate Mosaic
+                    </button>
+                </form>
+            </section>
+
+            <!-- Generation Progress -->
+            <section class="progress-section" id="progressSection" style="display: none;">
+                <h2><i class="fas fa-spinner fa-spin"></i> Generating Mosaic</h2>
+                <div class="generation-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="generationProgressFill"></div>
+                    </div>
+                    <p id="generationProgressText">Starting generation...</p>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section" id="resultsSection" style="display: none;">
+                <h2><i class="fas fa-check-circle"></i> Generated Mosaic</h2>
+                <div class="result-container">
+                    <img id="resultImage" class="result-image" alt="Generated mosaic">
+                    <div class="result-actions">
+                        <button id="downloadBtn" class="action-btn">
+                            <i class="fas fa-download"></i> Download
+                        </button>
+                        <button id="newGenerationBtn" class="action-btn secondary">
+                            <i class="fas fa-plus"></i> Generate Another
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- History Section -->
+            <section class="history-section">
+                <h2><i class="fas fa-history"></i> Generation History</h2>
+                <div class="history-grid" id="historyGrid">
+                    <div class="history-empty">
+                        <i class="fas fa-clock"></i>
+                        <p>No generation history yet</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Error Modal -->
+    <div class="modal" id="errorModal" style="display: none;">
+        <div class="modal-content">
+            <h3><i class="fas fa-exclamation-triangle"></i> Error</h3>
+            <p id="errorMessage"></p>
+            <button class="modal-btn" onclick="hideModal('errorModal')">OK</button>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay" style="display: none;">
+        <div class="loading-spinner">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Loading...</p>
+        </div>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
